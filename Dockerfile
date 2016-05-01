@@ -1,11 +1,9 @@
-From alpine:latest
+FROM daocloud.io/php:5.6-cli
 
-MAINTAINER Gofen Guo 
+COPY . /app  
+WORKDIR /app  
+CMD [ "php", "./hello.php" ]  
 
-RUN apk --update add nginx
+docker build -t my-php-app .
 
-COPY ./usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx","-g","daemon off;"]
+docker run my-php-app
