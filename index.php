@@ -1,5 +1,8 @@
 <?php
 
+echo "hello qiping";
+exit();
+
 require('DB.php');
 
 $db = new DB();
